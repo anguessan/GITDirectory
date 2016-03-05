@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="masterDetails.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:listView value="#{bindings.DepartmentsView1.treeModel}" var="item"
+                             emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                             fetchSize="#{bindings.DepartmentsView1.rangeSize}" id="lv1">
+                    <af:listItem id="li1">
+                        <af:panelGroupLayout layout="horizontal" id="pgl1">
+                            <f:facet name="separator">
+                                <af:spacer width="10" id="s1"/>
+                            </f:facet>
+                            <af:outputFormatted value="#{item.bindings.EmployeeId.inputValue}" id="of1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmentsView1.hints.EmployeeId.format}"/>
+                            </af:outputFormatted>
+                            <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of2"/>
+                            <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of3"/>
+                            <af:outputFormatted value="#{item.bindings.Email.inputValue}" id="of4"/>
+                            <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of5"/>
+                            <af:outputFormatted value="#{item.bindings.HireDate.inputValue}" id="of6">
+                                <af:convertDateTime pattern="#{bindings.DepartmentsView1.hints.HireDate.format}"/>
+                            </af:outputFormatted>
+                            <af:outputFormatted value="#{item.bindings.JobId.inputValue}" id="of7"/>
+                            <af:outputFormatted value="#{item.bindings.Salary.inputValue}" id="of8">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmentsView1.hints.Salary.format}"/>
+                            </af:outputFormatted>
+                            <af:outputFormatted value="#{item.bindings.CommissionPct.inputValue}" id="of9">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmentsView1.hints.CommissionPct.format}"/>
+                            </af:outputFormatted>
+                        </af:panelGroupLayout>
+                    </af:listItem>
+                    <f:facet name="groupHeaderStamp">
+                        <af:listItem id="li2">
+                            <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                <f:facet name="separator">
+                                    <af:spacer width="10" id="s2"/>
+                                </f:facet>
+                                <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of10"/>
+                            </af:panelGroupLayout>
+                        </af:listItem>
+                    </f:facet>
+                </af:listView>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
