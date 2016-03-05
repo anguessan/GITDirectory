@@ -42,7 +42,7 @@
                                 <f:facet name="separator">
                                     <af:spacer width="10" id="s2"/>
                                 </f:facet>
-                                <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of10"/>
+                                <af:outputFormatted value="Department :#{item.bindings.DepartmentName.inputValue}" id="of10"/>
                             </af:panelGroupLayout>
                         </af:listItem>
                     </f:facet>
